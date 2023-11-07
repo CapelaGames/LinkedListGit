@@ -23,6 +23,8 @@ int main()
 
     list.PrintList();
     cout << endl;
+    list.PrintListBackwards();
+    cout << endl;
 
     string s;
     cin >> s;

@@ -8,6 +8,7 @@ class LinkedList
 {
 private:
 	Node* head;
+	Node* tail;
 
 public:
 	LinkedList();
@@ -17,6 +18,8 @@ public:
 	void InsertNode(int position, int data);
 
 	void PrintList();
+
+	void PrintListBackwards();
 
 	void DeleteNode(int position);
 };
