@@ -62,13 +62,56 @@ void LinkedList::PrintListBackwards()
 
 void LinkedList::DeleteNode(int position)
 {
-	//HOMEWORK
+	if (head == nullptr)
+	{
+		//Nothing to delete
+		return;
+	}
+	if (head == tail)
+	{
+		delete head;
+		tail = nullptr;
+		head = nullptr;
+		return;
+	}
+
+	Node* del = head;
+	int counter = 0;
+	while (counter < position)
+	{
+		if (del->next == nullptr)
+		{
+			//error msg here
+			return;
+		}
+		del = del ->next;
+		counter++;
+	}
+
+	Node* previous = del->prev;
+	Node* next = del->next;
+
+	if (previous == nullptr)
+	{
+		next->prev = nullptr;
+		head = next;
+	}
+	else if (next == nullptr)
+	{
+		previous->next = nullptr;
+		tail = previous;
+	}
+	else
+	{
+		previous->next = next;
+		next->prev = previous;
+	}
 
 
-	Node* newNode = new Node(340943);
+	cout << "Deleting: " << del ->data << endl;
 
 	//Keyword to remove something from memory
-	delete newNode;
+	delete del;
 }
 
 void LinkedList::InsertNode(int position, int data)

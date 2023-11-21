@@ -10,16 +10,22 @@ int main()
     cout << "Hello World!\n";
 
     LinkedList list;
+    
+    list.DeleteNode(0);
 
     list.InsertNode(3, 1);
+    list.DeleteNode(0);
     list.InsertNode(3, 2);
     list.InsertNode(3, 3);
     list.InsertNode(3, 4);
+    list.DeleteNode(6);
     list.InsertNode(3, 5);
     list.InsertNode(3, 6);
     list.InsertNode(3, 7);
     
     cout << "Elements are : \n";
+
+    list.DeleteNode(3);
 
     list.PrintList();
     cout << endl;
